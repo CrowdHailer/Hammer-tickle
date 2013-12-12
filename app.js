@@ -3,13 +3,16 @@ var myApp = {
 	other: "click dblclick mousedown",
 	init: function (){
 		this.output = document.getElementById('events');
-		this.hammertime = Hammer(document).on(this.hammerEvents, function(evt){
-			console.log(evt.type);
-			myApp.addToList(evt);
-		});
+		this.hammertime = Hammer(document).on(this.hammerEvents, myApp.addToList);
 	},
 	addToList: function (evt) {
-		this.output.innerHTML += '<li> woooo </li>';
+		myApp.output.innerHTML += '<li>' + evt.type +'</li>';
+		window.setTimeout(function (){
+			myApp.removeTopListItem(myApp.output);
+		}, 5000);
+	},
+	removeTopListItem: function (list) {
+		list.removeChild(list.children[0]);
 	}
 };
 myApp.init();

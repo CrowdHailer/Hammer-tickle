@@ -1,4 +1,22 @@
+body, html {
+	height: 100%; 
+	margin: 0; 
+	padding: 0; 
+	overflow: hidden; /*removes scrollbars*/
+	-ms-touch-action: none;
+	-ms-content-zooming: none;
+	background: #FFCE79;
+}
+
 h1{
-	background: red;
-	color: Yellow;
+	background: #04819E;
+	color: #38B2CE;
+	margin: 0;
+	font-size: 2em;
+	text-align: center;
+}
+li {
+	font-weight: bold;
+	font-size: 120%;
+	color: #04819E;
 }
